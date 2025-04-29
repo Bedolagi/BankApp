@@ -6,13 +6,14 @@ namespace BankApp
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
 
             Database.InitializeDatabase();
 
-            MainWindow mainWindow = new MainWindow();
+            var mainWindow = new MainWindow();
             mainWindow.MainFrame.Navigate(new AuthPage());
             mainWindow.Show();
+
+            base.OnStartup(e);
         }
     }
 }

@@ -12,7 +12,6 @@ namespace BankApp
             {
                 conn.Open();
 
-                
                 using (var cmd = new NpgsqlCommand(
                     "CREATE TABLE IF NOT EXISTS users (" +
                     "id SERIAL PRIMARY KEY, " +
@@ -22,7 +21,6 @@ namespace BankApp
                     cmd.ExecuteNonQuery();
                 }
 
-           
                 using (var cmd = new NpgsqlCommand(
                     "CREATE TABLE IF NOT EXISTS loans (" +
                     "id SERIAL PRIMARY KEY, " +

@@ -28,6 +28,7 @@ namespace BankApp
                     if (result != null)
                     {
                         int userId = (int)result;
+                        NavigationService.Navigate(new AccountPage(userId));
                     }
                     else
                     {
@@ -52,6 +53,7 @@ namespace BankApp
 
                     int userId = (int)cmd.ExecuteScalar();
                     MessageBox.Show("Успешная регистрация.");
+                    NavigationService.Navigate(new AccountPage(userId));
                 }
             }
         }

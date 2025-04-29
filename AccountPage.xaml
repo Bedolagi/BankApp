@@ -1,0 +1,40 @@
+﻿<Page x:Class="BankApp.AccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="AccountPage">
+	<StackPanel Margin="20">
+		<TextBlock x:Name="WelcomeText" FontSize="16" Margin="0,0,0,20"/>
+
+		<GroupBox Header="Заявка на кредит" Margin="0,0,0,20">
+			<StackPanel>
+				<TextBlock Text="Сумма кредита" Margin="0,0,0,5"/>
+				<TextBox x:Name="AmountTextBox" Margin="0,0,0,10"/>
+
+				<TextBlock Text="Срок в месяцах" Margin="0,0,0,5"/>
+				<TextBox x:Name="TermTextBox" Margin="0,0,0,10"/>
+
+				<TextBlock Text="Ставка по кредиту" Margin="0,0,0,5"/>
+				<TextBox x:Name="RateTextBox" Text="10" Margin="0,0,0,10"/>
+
+				<Button x:Name="TakeLoanButton" Content="Оформить кредит" Click="TakeLoanButton_Click"/>
+			</StackPanel>
+		</GroupBox>
+
+		<GroupBox Header="Мои кредиты">
+			<StackPanel>
+				<ListView x:Name="LoansListView">
+					<ListView.View>
+						<GridView>
+							<GridViewColumn Header="Сумма кредита" DisplayMemberBinding="{Binding Amount}"/>
+							<GridViewColumn Header="Срок кредита" DisplayMemberBinding="{Binding Term}"/>
+							<GridViewColumn Header="Ставка" DisplayMemberBinding="{Binding Rate}"/>
+							<GridViewColumn Header="Дата оформления" DisplayMemberBinding="{Binding Date}"/>
+						</GridView>
+					</ListView.View>
+				</ListView>
+
+				<Button x:Name="ExportButton" Content="Скачать график платежей" Click="ExportButton_Click" Margin="0,10,0,0"/>
+			</StackPanel>
+		</GroupBox>
+	</StackPanel>
+</Page>
