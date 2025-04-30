@@ -22,7 +22,7 @@
 
 		<GroupBox Header="Мои кредиты">
 			<StackPanel>
-				<ListView x:Name="LoansListView">
+                <ListView x:Name="LoansListView" MouseDoubleClick="LoansListView_MouseDoubleClick">
 					<ListView.View>
 						<GridView>
 							<GridViewColumn Header="Сумма кредита" DisplayMemberBinding="{Binding Amount}"/>

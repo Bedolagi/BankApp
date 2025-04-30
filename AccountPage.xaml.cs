@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System.Windows.Input;
 
 namespace BankApp
 {
@@ -107,7 +108,15 @@ namespace BankApp
                 MessageBox.Show("Выберите кредит");
             }
         }
-
+        private void LoansListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (LoansListView.SelectedItem is Loan selectedLoan)
+            {
+                var paymentSchedule = CalculatePaymentSchedule(selectedLoan);
+                var window = new PaymentScheduleWindow(paymentSchedule);
+                window.Show();
+            }
+        }
         private List<Payment> CalculatePaymentSchedule(Loan loan)
         {
             var payments = new List<Payment>();

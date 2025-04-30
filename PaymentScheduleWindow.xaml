@@ -1,0 +1,17 @@
+﻿<Window x:Class="BankApp.PaymentScheduleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="График платежей" Height="450" Width="800">
+	<Grid>
+		<DataGrid x:Name="PaymentsDataGrid" AutoGenerateColumns="False" Margin="10">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="№ платежа" Binding="{Binding Number}"/>
+				<DataGridTextColumn Header="Дата платежа" Binding="{Binding Date, StringFormat=d}"/>
+				<DataGridTextColumn Header="Сумма платежа" Binding="{Binding PaymentAmount, StringFormat=N2}"/>
+				<DataGridTextColumn Header="Основной долг" Binding="{Binding Principal, StringFormat=N2}"/>
+				<DataGridTextColumn Header="Проценты" Binding="{Binding Interest, StringFormat=N2}"/>
+				<DataGridTextColumn Header="Остаток долга" Binding="{Binding RemainingBalance, StringFormat=N2}"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</Grid>
+</Window>
